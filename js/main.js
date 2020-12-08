@@ -227,13 +227,15 @@ $( document ).ready(function() {
         req = new ActiveXObject("Microsoft.XMLHTTP");
       }
     
+      
       // Arquivo PHP juntamente com o valor digitado no campo (método GET)
       //var url = "pesquisaBC.php?valor="+valor;
-      var url = "http://127.0.0.1:8000/api/articles/search/"+valor;
+      var url = "http://localhost/unibc/public/api/articles/search/"+valor;
     
 
       // Chamada do método open para processar a requisição
       req.open("Get", url, true);
+      req.setRequestHeader('Content-Type', 'application/json');
     
       // Quando o objeto recebe o retorno, chamamos a seguinte função;
       req.onreadystatechange = function() {
