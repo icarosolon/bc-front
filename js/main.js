@@ -230,7 +230,7 @@ $( document ).ready(function() {
       
       
       var url = "http://localhost/unibc/public/api/articles/search/"+valor;
-      
+      var urlDownload = "http://127.0.0.1:8000/api/document/download/";
       //URL para uso em outros computadores
       //var url = "http://192.168.16.8/unibc/public/api/articles/search/"+valor;
     
@@ -269,7 +269,7 @@ $( document ).ready(function() {
 
                 if(artigo.document){
                   link.innerHTML = "Veja mais..."; 
-                  link.setAttribute('href', artigo.document); 
+                  link.setAttribute('href', urlDownload + artigo.article_id); 
                   link.setAttribute('target', '_blank');
                   link.setAttribute('type', 'submit');
                   link.setAttribute('id', 'mrs_submit');
