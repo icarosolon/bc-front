@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Unimed</title>
+	<title>BC Unimed</title>
     <meta name="description" content="Marshall - Ultimate Coming Soon Template by pixiefy">
-    <meta name="author" content="pixiefy">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+    <meta name="author" content="André Phelipe e Ícaro Solon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Icone -->
+	<link rel="icon" href="/bc/images/loading.svg" type="image/icon type">
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800%7CRanga:700%7CIceberg" rel="stylesheet">  
     
