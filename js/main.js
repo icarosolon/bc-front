@@ -228,9 +228,11 @@ $( document ).ready(function() {
       }
     
       
-      // Arquivo PHP juntamente com o valor digitado no campo (método GET)
-      //var url = "pesquisaBC.php?valor="+valor;
+      
       var url = "http://localhost/unibc/public/api/articles/search/"+valor;
+      
+      //URL para uso em outros computadores
+      //var url = "http://192.168.16.8/unibc/public/api/articles/search/"+valor;
     
 
       // Chamada do método open para processar a requisição
