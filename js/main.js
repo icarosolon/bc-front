@@ -249,46 +249,18 @@ $( document ).ready(function() {
           //resposta retornada com os artigos
           var artigos = JSON.parse(req.responseText);
 
-          // Resposta retornada pelo busca.php
-          //var ramais = req.responseText;
-    
-          // Abaixo colocamos a(s) resposta(s) na div resultado
-          //document.getElementById('resultadoPesquisa').innerHTML = ramais;
-         
-          /* var caixa = '<div class="marshall-works-details">
-            <div id="works-heading" class="marshall-works-heading">
-              <div class="marshall-works-heading-inner">
-                <h2>'+ artigo.title +'</h2>
-                <p>'+ artigo.description + '</p> 
-                <a target="_blank" href="#">Abrir</a>
-              </div>
-            </div>
-          </div>'; */
-  
-         /*  var divNova = document.createElement("div"); 
-          divNova.textContent = artigos;
-          var conteudoNovo = document.createTextNode(artigo[0].title); 
-          divNova.append(conteudoNovo); //adiciona o nó de texto à nova div criada 
-
-          var divAtual = document.getElementById('resultadoPesquisa'); 
-          document.body.insertBefore(divNova, divAtual);  */
           
-          //document.getElementById('resultadoPesquisa').innerHTML = divNova;
-          //});
-
-            /* document.getElementById('resultadoPesquisa').innerHTML = 
-              '<h2>'+artigos +'</h2>';
-             */
-            //let nomes = ["Diego", "Gabriel", "Lucas"];
             let lista = document.querySelector('#resultadoPesquisa');
-            let title = document.createElement('h2');
-            let description = document.createElement('p');
-            let link = document.createElement('a');
-            
+           //limpando lista e evitando que permaneçam registros anteriores
+            lista.innerHTML="";
 
-            for(let artigo of artigos){
-                title.innerHTML = artigo.title;
-                description.innerHTML = artigo.description;
+            artigos.forEach(artigo=> {
+              let title = document.createElement('h2');
+              let description = document.createElement('p');
+              let link = document.createElement('a');
+              title.innerHTML = artigo.title;
+
+              description.innerHTML = artigo.description;
 
                 if(artigo.document){
                   link.innerHTML = artigo.name; 
@@ -299,14 +271,17 @@ $( document ).ready(function() {
                 lista.appendChild(description);
                 lista.appendChild(link);
                 lista.appendChild(document.createElement('br'));
+            });  
                 
-            }
+                
+            
 
 
         }
       }
       req.send(null);
   
+      //limpando lista a cada inserção de caractere
       let lista = document.querySelector('#resultadoPesquisa');
       lista.innerHTML="";
 
