@@ -258,25 +258,26 @@ $( document ).ready(function() {
               let title = document.createElement('h2');
               let description = document.createElement('p');
               let link = document.createElement('a');
-              title.innerHTML = artigo.title;
 
+              title.innerHTML = artigo.title;
               description.innerHTML = artigo.description;
 
                 if(artigo.document){
-                  link.innerHTML = artigo.name; 
+                  link.innerHTML = "Veja mais..."; 
                   link.setAttribute('href', artigo.document); 
+                  link.setAttribute('target', '_blank');
+                  link.setAttribute('type', 'submit');
+                  link.setAttribute('id', 'mrs_submit');
                 }
                   
                 lista.appendChild(title);
                 lista.appendChild(description);
-                lista.appendChild(link);
-                lista.appendChild(document.createElement('br'));
+                if(artigo.document)
+                  lista.appendChild(link);
+                lista.append(document.createElement('br'));
+                lista.append(document.createElement('br'));
+                
             });  
-                
-                
-            
-
-
         }
       }
       req.send(null);

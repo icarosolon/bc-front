@@ -31,10 +31,11 @@
 	<div class="marshall-loading-screen">
 	    <div class="marshall-loading-icon">
 	        <div class="marshall-loading-inner">
-	        	<img src="/images/loading.svg" />
+	        	<img src="/bc/images/loading.svg" />
 	        </div>
 	    </div>
-	</div><!-- End .loading-screen -->
+	</div>
+	<!-- End .loading-screen -->
 
     
 	<canvas></canvas>
