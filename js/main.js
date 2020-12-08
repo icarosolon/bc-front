@@ -237,6 +237,7 @@ $( document ).ready(function() {
 
       // Chamada do método open para processar a requisição
       req.open("Get", url, true);
+      //Adiciona cabeçalhos
       req.setRequestHeader('Content-Type', 'application/json');
     
       // Quando o objeto recebe o retorno, chamamos a seguinte função;
