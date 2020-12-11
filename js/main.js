@@ -228,17 +228,19 @@ $( document ).ready(function() {
       }
     
       
-      
+      //URL para uso local
       var url = "http://localhost/unibc/public/api/articles/search/"+valor;
       var urlDownload = "http://127.0.0.1:8000/api/document/download/";
-      //URL para uso em outros computadores
-      //var url = "http://192.168.16.8/unibc/public/api/articles/search/"+valor;
-    
+     
+      //URLs para uso em outros computadores
+     /*  var url = "http://192.168.16.8/unibc/public/api/articles/search/"+valor;
+      var urlDownload = "http://192.168.16.8/unibc/public/api/document/download/"; */
 
       // Chamada do método open para processar a requisição
       req.open("Get", url, true);
       //Adiciona cabeçalhos
       req.setRequestHeader('Content-Type', 'application/json');
+      req.setRequestHeader('Access-Control-Allow-Origin', '*');
     
       // Quando o objeto recebe o retorno, chamamos a seguinte função;
       req.onreadystatechange = function() {
@@ -270,6 +272,7 @@ $( document ).ready(function() {
                 if(artigo.document){
                   link.innerHTML = "Veja mais..."; 
                   link.setAttribute('href', urlDownload + artigo.article_id); 
+                  //link.setAttribute('href', artigo.document); 
                   link.setAttribute('target', '_blank');
                   link.setAttribute('type', 'submit');
                   link.setAttribute('id', 'mrs_submit');
@@ -286,11 +289,6 @@ $( document ).ready(function() {
         }
       }
       req.send(null);
-  
-      //limpando lista a cada inserção de caractere
-      let lista = document.querySelector('#resultadoPesquisa');
-      lista.innerHTML="";
-
 
       if(window.matchMedia("(min-width: 1025px)").matches){
         clickToSlide( self ); 
